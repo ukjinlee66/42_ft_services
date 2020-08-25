@@ -1,3 +1,7 @@
+events {
+	worker_connections 1024;
+}
+http {
 server {
 			listen 80;
 			listen [::]:80;
@@ -9,13 +13,11 @@ server {
 			listen 443 ssl ;
 			listen [::]:443 ssl ;
 
-			ssl on;
 			ssl_certificate /etc/ssl/certs/localhost.crt;
 			ssl_certificate_key /etc/ssl/certs/localhost.key;
-
-			root /var/www/html;
-
+			root /var/lib/nginx/html;	
 			index index.html index.htm
 
 			server_name localhost www.localhost;
+}
 }
