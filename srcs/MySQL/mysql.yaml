@@ -1,43 +1,54 @@
 apiVersion: v1
 kind: Service
 metadata:
-    name: mysql-cluster-ip-service
-spec:
-    clusterIP: 10.101.204.217
-    ports:
-    - port: 3306
-    selector:
+    name: mysql
+    labels:
         app: mysql
+spec:
+    type: ClusterIP
+    ports:
+      - port: 3306
+    selector:
+      app: mysql
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-    name: mysql
+  name: mysql
 spec:
+    replicas: 1
     selector:
         matchLabels:
-            app: mysql
-    strategy:
-        type: Recreate
+          app: mysql
     template:
       metadata:
         labels:
-            app: mysql
+          app: mysql
       spec:
-          nodeName: kube-node-1
           containers:
-          - image: mysql:5.6
-            name: mysql
-            env:
-            - name: MYSQL_ROOT_PASSWORD
-              value: password
-            ports:
-            - containerPort: 3306
+            - image: mysql:5.6
               name: mysql
-            volumeMounts:
+              env:
+                - name: MYSQL_ROOT_PASSWORD
+                  valueFrom:
+                   secretKeyRef:
+                    name: mysql-password
+                    key: password
+                - name: MYSQL_DATABASE
+                  value: k8sdb
+                - name: MYSQL_USER
+                  value: k8suser
+                - name: MYSQL_ROOT_HOST
+                  value: '%'
+                - name: MYSQL_PASSWORD
+                  value: p@ssw0rd!!
+              ports:
+              - containerPort: 3306
+                name: mysql
+              volumeMounts:
+              - name: mysql-persistent-storage
+                mountPath: /var/lib/mysql
+          volumes:
             - name: mysql-persistent-storage
-              mountPath: /var/lib/mysql
-        volumes:
-        - name: mysql-persistent-storage
-          persistentVolumeClaim:
-              claimName: mysql-pv-claim
+              persistentVolumeClaim:
+                claimName: mysql-pv-claim
