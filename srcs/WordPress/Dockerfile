@@ -11,6 +11,5 @@ RUN mkdir /var/www/html
 
 COPY wordpress.zip /var/www/html/
 # COPY wordpressdb.sql /var/
-RUN unzip /var/www/html/wordpress.zip
-RUN mv wordpress /var/www/html/
+RUN unzip /var/www/html/wordpress.zip -d /var/www/html
 RUN rm -rf /var/www/html/wordpress.zip
