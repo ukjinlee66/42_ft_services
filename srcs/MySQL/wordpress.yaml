@@ -27,7 +27,7 @@ spec:
               - name: WORDPRESS_DB_PASSWORD
                 value: P@ssw0rd!!
               ports:
-                - containerPort: 5050
+                - containerPort: 80
                   name: wordpress
               volumeMounts:
                 - name: wordpress-persistent-storage
@@ -35,7 +35,7 @@ spec:
             volumes:
             - name: wordpress-persistent-storage
               persistentVolumeClaim:
-                claimName: wordpress-volumeclaim
+                claimName: wordpress-pv-claim
 ---
 apiVersion: v1
 kind: Service
