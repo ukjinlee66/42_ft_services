@@ -28,7 +28,7 @@ spec:
           app: mysql
       spec:
           containers:
-            - image: mysql:5.6
+            - image: tmysql
               name: mysql
               env:
                 - name: MYSQL_ROOT_PASSWORD
@@ -41,7 +41,7 @@ spec:
                 - name: MYSQL_USER
                   value: k8suser
                 - name: MYSQL_ROOT_HOST
-                  value: '%'
+                  value: 'localhost'
                 - name: MYSQL_PASSWORD
                   value: p@ssw0rd!!
               ports:
