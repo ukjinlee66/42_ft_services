@@ -28,3 +28,4 @@ Your Load Balancer should be the only entry point for the Cluster.<br>
 - <https://bluese05.tistory.com/77> - Difference between entrypoint and cmd command in dockerfile.<br><br>
 - <https://wiki.alpinelinux.org/wiki/Production_DataBases_:_mysql> - set mysql init<br>
 - <https://velog.io/@pa324/쿠버네티스-mysql-설치-6bjxv4dcoa> - Installing mysql on Kubernetes.<br><br>
+- <https://jasontody.tistory.com/113> - how to use "nohup"?<br><br>
