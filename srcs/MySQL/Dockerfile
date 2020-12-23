@@ -9,12 +9,11 @@ RUN rc default
 RUN mkdir var/www
 RUN mkdir var/www/html
 
-COPY setup.sh /var/
-COPY init_db.sql /var/ 
-RUN chmod 777 /var/setup.sh
-RUN chmod 777 /var/init_db.sql
+COPY setup.sh ./
+COPY init_db.sh ./ 
+RUN chmod 777 ./setup.sh
+RUN chmod 777 ./init_db.sh
 
-# RUN mysql_install_db --user=mysql --datadir=/var/lib/mysql
 EXPOSE 3306
 
-# ENTRYPOINT ["/var/setup.sh"]
+ENTRYPOINT ["./setup.sh"]

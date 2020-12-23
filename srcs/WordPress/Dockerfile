@@ -19,4 +19,5 @@ RUN unzip /var/www/html/wordpress.zip -d /var/www/html
 RUN rm -rf /var/www/html/wordpress.zip
 
 EXPOSE 5050
+
 ENTRYPOINT ["./setup.sh"]

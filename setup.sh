@@ -6,7 +6,7 @@
 #    By: youlee <youlee@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/18 17:30:53 by youlee            #+#    #+#              #
-#    Updated: 2020/08/25 15:09:00 by youlee           ###   ########.fr        #
+#    Updated: 2020/12/23 21:34:40 by youlee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #!/bin/bash
@@ -34,8 +34,10 @@ echo -e "\033[32m"==============================================================
 echo -e "\033[31m"check MetalLB system"\033[0m"
 kubectl get all -n metallb-system
 echo -e "\033[32m"=========================================================================="\033[0m"
-echo -e "\033[31m"apply config.yaml file!"\033[0m"
+echo -e "\033[31m"apply Metal LB config.yaml file!"\033[0m"
 kubectl apply -f srcs/MetalLB/config.yaml
+echo -e "\033[31m"Check External IP"\033[0m"
+kubectl get svc
 echo -e "\033[32m"=========================================================================="\033[0m"
 echo -e "\033[36m"SETUP.SH END"\033[0m"
 echo -e "\033[32m"=========================================================================="\033[0m"
