@@ -35,4 +35,4 @@ Make sure that each redirection toward a service is done using a load balancer. 
 - <https://jasontody.tistory.com/113> - how to use "nohup"?<br><br>
 - <https://medium.com/google-cloud/kubernetes-nodeport-vs-loadbalancer-vs-ingress-when-should-i-use-what-922f010849e0> - Nodeport, Ingress, Load Balancer differences. <br><br>
 - <https://kubernetes.io/ko/docs/concepts/workloads/pods/pod-lifecycle/> - Pods life cycle. <br><br>
-
+- <https://medium.com/humanscape-tech/nginx를-이용한-forward-proxy-구현-91f3555549be> - What is forward, backward Proxy? <br><br>
