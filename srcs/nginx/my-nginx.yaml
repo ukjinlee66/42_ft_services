@@ -6,7 +6,7 @@
 #    By: youlee <youlee@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/25 13:47:35 by youlee            #+#    #+#              #
-#    Updated: 2020/12/24 04:01:38 by youlee           ###   ########.fr        #
+#    Updated: 2020/12/26 19:45:28 by youlee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ spec:
         spec:
             containers:
             - name: nginx
-              image: nginx
+              image: nginxx
               imagePullPolicy: Never
               ports:
               - containerPort: 80
