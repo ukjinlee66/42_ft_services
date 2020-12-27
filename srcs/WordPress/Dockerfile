@@ -1,22 +1,19 @@
 FROM alpine
 
 RUN	apk update
-RUN apk add zip
-RUN apk add vim
 RUN apk add openrc
-RUN apk add bash
+RUN apk add wget
+RUN wget http://wordpress.org/latest.tar.gz
 RUN rc default
 RUN apk add php7 php7-fpm php7-opcache php7-gd php7-mysqli php7-curl php7-mbstring php7-json php7-session
 RUN rm -fr /var/cache/apk/*
-RUN mkdir /var/www
-RUN mkdir /var/www/html
-
+RUN tar -xzvf latest.tar.gz
+RUN rm latest.tar.gz
+RUN mv wordpress /etc/
+RUN chown -R test:test /etc/wordpress/*
+COPY ./wp-config.php /etc/wordpress/
 COPY setup.sh .
 RUN chmod 777 setup.sh
-COPY wordpress.zip /var/www/html/
-# COPY wordpressdb.sql /var/
-RUN unzip /var/www/html/wordpress.zip -d /var/www/html
-RUN rm -rf /var/www/html/wordpress.zip
 
 EXPOSE 5050
 

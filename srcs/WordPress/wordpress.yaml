@@ -15,17 +15,9 @@ spec:
                 app: wordpress
         spec:
             containers:
-            - image: tword
-              name: wordpress
-              env:
-              - name: WORDPRESS_DB_HOST
-                value: mysql:3306
-              - name: WORDPRESS_DB_NAME
-                value: k8sdb
-              - name: WORDPRESS_DB_USER
-                value: k8suser
-              - name: WORDPRESS_DB_PASSWORD
-                value: P@ssw0rd!!
+            - name: wordpress
+              image: wordpresss
+              imagePullPolicy: Never
               ports:
                 - containerPort: 5050
                   name: wordpress
