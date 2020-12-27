@@ -13,6 +13,7 @@ RUN chown -R test:test /var/lib/nginx
 RUN mkdir /www
 RUN chown -R test:test /www
 COPY index.html /www/index.html
+RUN chmod 755 /www/*
 RUN mkdir -p /etc/nginx/ssl
 RUN mkdir -p /run/nginx
 RUN mkdir -p /var/run/sshd

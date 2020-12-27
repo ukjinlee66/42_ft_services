@@ -6,14 +6,15 @@ events {
 http {
 
 server {
-			listen 80 default_server;
-			listen [::]:80 default_server;
+			listen 80;
+			listen [::]:80 ;
+			server_name localhost www.localhost;
 			return 301 https://$host$request_uri;
 }
 server {
 			listen 443 ssl ;
 			listen [::]:443 ssl ;
-			server_name _;
+			server_name localhost www.localhost;
 
 			ssl_certificate /etc/ssl/nginx-selfsigned.crt;
 			ssl_certificate_key /etc/ssl/nginx-selfsigned.key;
