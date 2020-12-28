@@ -12,6 +12,19 @@ spec:
     selector:
       app: mysql
 ---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+    name: mysql-pv-claim
+    labels:
+      app: mysql
+spec:
+    accessModes:
+      - ReadWriteOnce
+    resources:
+      requests:
+         storage: 1Gi
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -19,7 +32,6 @@ metadata:
   labels:
     app: mysql
 spec:
-    replicas: 1
     selector:
       matchLabels:
         app: mysql

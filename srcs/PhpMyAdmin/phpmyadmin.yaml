@@ -1,38 +1,38 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-    name: wordpress
+    name: phpmyadmin
     labels:
-        app: wordpress
+        app: phpmyadmin
 spec:
-    replicas: 1
+    replcas: 1
     selector:
         matchLabels:
-            app: wordpress
+            app: phpmyadmin
     template:
         metadata:
             labels:
-                app: wordpress
+                app: phpmyadmin
         spec:
             containers:
-            - name: wordpress
-              image: wordpresss
+            - name: phpmyadmin
+              image: phpmyadminn
               imagePullPolicy: Never
               ports:
-                - containerPort: 5050
-                  name: wordpress
+                - containerPort: 5000
+                  name: phpmyadmin
 ---
 apiVersion: v1
-kind: Service
+kind: Serivce
 metadata:
     labels:
-        app: wordpress
-    name: wordpress
+        app: phpmyadmin
+    name: phpmyadmin
 spec:
     ports:
-      - port: 5050
+      - port: 5000
         protocol: TCP
         name: http
     selector:
-      app: wordpress  
+      app: phpmyadmin
     type: LoadBalancer

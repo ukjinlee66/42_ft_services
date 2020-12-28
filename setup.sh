@@ -6,7 +6,7 @@
 #    By: youlee <youlee@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/18 17:30:53 by youlee            #+#    #+#              #
-#    Updated: 2020/12/28 02:56:42 by youlee           ###   ########.fr        #
+#    Updated: 2020/12/29 01:19:38 by youlee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #!/bin/bash
@@ -54,7 +54,6 @@ kubectl get svc
 echo -e "\033[32m"=========================================================================="\033[0m"
 echo -e "\033[31m"Set all yaml files."\033[0m"
 kubectl apply -f srcs/nginx/my-nginx.yaml
-kubectl apply -f srcs/MySQL/persistentvolume.yaml
 kubectl apply -f srcs/MySQL/mysql.yaml
 kubectl apply -f srcs/WordPress/wordpress.yaml
 echo -e "\033[32m"=========================================================================="\033[0m"
