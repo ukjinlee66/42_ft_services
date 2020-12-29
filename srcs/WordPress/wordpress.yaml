@@ -30,7 +30,8 @@ metadata:
     name: wordpress
 spec:
     ports:
-      - port: 5050
+      - name: wordpress
+        port: 5050
         protocol: TCP
         name: http
     selector:

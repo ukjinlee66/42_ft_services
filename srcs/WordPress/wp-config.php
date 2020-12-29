@@ -30,7 +30,8 @@ define( 'DB_PASSWORD', 'password' );
 
 /** MySQL hostname */
 define( 'DB_HOST', 'mysql' );
-
+define('WP_HOME', 'wordpress');
+define('WP_SITEURL', 'wordpress');
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
 
