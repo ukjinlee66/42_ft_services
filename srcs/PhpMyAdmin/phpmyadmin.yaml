@@ -5,7 +5,7 @@ metadata:
     labels:
         app: phpmyadmin
 spec:
-    replcas: 1
+    replicas: 1
     selector:
         matchLabels:
             app: phpmyadmin
@@ -23,7 +23,7 @@ spec:
                   name: phpmyadmin
 ---
 apiVersion: v1
-kind: Serivce
+kind: Service
 metadata:
     labels:
         app: phpmyadmin
