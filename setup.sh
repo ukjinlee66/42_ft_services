@@ -6,7 +6,7 @@
 #    By: youlee <youlee@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/18 17:30:53 by youlee            #+#    #+#              #
-#    Updated: 2020/12/29 20:11:51 by youlee           ###   ########.fr        #
+#    Updated: 2021/01/01 21:11:34 by youlee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #!/bin/bash
@@ -56,8 +56,8 @@ echo -e "\033[32m"==============================================================
 echo -e "\033[31m"Set all yaml files."\033[0m"
 kubectl apply -f srcs/nginx/my-nginx.yaml
 kubectl apply -f srcs/MySQL/mysql.yaml
-kubectl apply -f srcs/WordPress/wordpress.yaml
 kubectl apply -f srcs/PhpMyAdmin/phpmyadmin.yaml
+kubectl apply -f srcs/WordPress/wordpress.yaml
 echo -e "\033[32m"=========================================================================="\033[0m"
 echo -e "\033[36m"SETUP.SH END"\033[0m"
 echo -e "\033[32m"=========================================================================="\033[0m"
