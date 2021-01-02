@@ -11,8 +11,8 @@ Your Load Balancer should be the only entry point for the Cluster.<br>
 - [ ] A FTPS server listening on port 21.<br>
 - [x] A WordPress website listening on port 5050, which will work with a MySQL database. Both services have to run in separate containers. The WordPress website will have several users and an administrator. Wordpress needs its own nginx server. The Load Balancer should be able to redirect directly to this service.<br>
 - [x] PhpMyAdmin, listening on port 5000 and linked with the MySQL database. Php-MyAdmin needs its own nginx server, The Load Balancer should be able to redirect directly to this service.<br>
-- [ ] A Grafana platform, listening on port 3000, linked with an InfluxDB database. Grafana will be monitoring all your containers. You must create one dashboard per service. InfluxDB and grafana will be in two distincts containers.<br>
-- [ ] In case of a crash or stop of one of the two database containers, you will have to make shure the data persist.<br>
+- [x] A Grafana platform, listening on port 3000, linked with an InfluxDB database. Grafana will be monitoring all your containers. You must create one dashboard per service. InfluxDB and grafana will be in two distincts containers.<br>
+- [x] In case of a crash or stop of one of the two database containers, you will have to make shure the data persist.<br>
 - [x] You must be able to access the Nginx container by logging into SSH.<br>
 - [x] All your containers must restart in case of a crash or stop of one of its component parts.<br><br>
 
@@ -40,3 +40,5 @@ Make sure that each redirection toward a service is done using a load balancer. 
 - <https://kubernetes.io/ko/docs/concepts/workloads/pods/pod-lifecycle/> - Pods life cycle. <br><br>
 - <https://medium.com/humanscape-tech/nginx를-이용한-forward-proxy-구현-91f3555549be> - What is forward, backward Proxy? <br><br>
 - <https://devconnected.com/how-to-install-influxdb-telegraf-and-grafana-on-docker/> - How To Install InfluxDB Telegraf and Grafana on Docker<br><br>
+- <https://octoperf.com/blog/2019/09/19/kraken-kubernetes-influxdb-grafana-telegraf/> - HOW TO DEPLOY INFLUXDB / TELEGRAF / GRAFANA ON K8S? <br><br>
+- <https://si.mpli.st/dev/2017-09-10-introduction-to-telegraf/> - Explanation of the concept of telegraf, grafana, and influxDB. <br><br>
