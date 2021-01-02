@@ -7,9 +7,10 @@ RUN apk update \
 		&& tar -zxvf grafana-7.3.6.linux-amd64.tar.gz \
 		&& rm -rf grafana-7.3.6.linux-amd64.tar.gz
 COPY ./defaults.ini /grafana-7.3.6/conf/
-COPY ./setup.sh
-RUN chmod 755 ./setup.sh
+#COPY ./setup.sh
+#RUN chmod 755 ./setup.sh
 
 EXPOSE 3000
 
-CMD sh ./setup.sh
+#CMD sh ./setup.sh
+CMD ["/usr/sbin/grafana-server", "--homepath=/usr/share/grafana"]

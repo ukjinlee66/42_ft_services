@@ -5,5 +5,5 @@ RUN apk update \
 		&& apk add influxdb \
 		&& rm -rf /var/cache/apk/*
 COPY ./influxdb.conf /etc/influxdb.conf
-
-CMD sh ./usr/sbin/influxed
+EXPOSE 8086
+CMD ["./usr/sbin/influxed"]

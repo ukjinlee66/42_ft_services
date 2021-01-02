@@ -9,5 +9,5 @@ RUN apk update \
 		&& mv telegraf /etc/ \
 		&& chmod 755 /etc/telegraf/*
 COPY	telegraf.conf /etc/telegraf/telegraf.conf
-
-CMD sh ./etc/telegraf
+RUN		chmod 755 /etc/telegraf/*
+CMD ["sh", "./etc/telegraf"]
