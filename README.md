@@ -43,3 +43,4 @@ Make sure that each redirection toward a service is done using a load balancer. 
 - <https://octoperf.com/blog/2019/09/19/kraken-kubernetes-influxdb-grafana-telegraf/> - HOW TO DEPLOY INFLUXDB / TELEGRAF / GRAFANA ON K8S? <br><br>
 - <https://si.mpli.st/dev/2017-09-10-introduction-to-telegraf/> - Explanation of the concept of telegraf, grafana, and influxDB. <br><br>
 - <https://blog.gojekengineering.com/diy-set-up-telegraf-influxdb-grafana-on-kubernetes-d55e32f8ce48> - telegraf yaml file set
+- <https://serverfault.com/questions/1026201/how-do-you-get-the-external-ip-address-from-inside-a-running-pod-in-a-kubernetes> - vsftp guide
