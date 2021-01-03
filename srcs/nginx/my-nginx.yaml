@@ -6,7 +6,7 @@
 #    By: youlee <youlee@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/25 13:47:35 by youlee            #+#    #+#              #
-#    Updated: 2021/01/01 20:55:31 by youlee           ###   ########.fr        #
+#    Updated: 2021/01/03 19:38:03 by youlee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,4 +64,3 @@ spec:
     selector:
        app: nginx
     type: LoadBalancer
-    loadBalancerIP: 192.168.99.130
