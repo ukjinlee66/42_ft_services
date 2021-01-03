@@ -6,4 +6,4 @@ RUN apk update \
 		&& rm -rf /var/cache/apk/*
 COPY ./influxdb.conf /etc/influxdb.conf
 EXPOSE 8086
-CMD ["./usr/sbin/influxed"]
+ENTRYPOINT ["/usr/sbin/influxd"]

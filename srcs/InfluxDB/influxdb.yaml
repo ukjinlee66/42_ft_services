@@ -40,6 +40,19 @@ spec:
       requests:  
           storage: 1Gi
 ---
+apiVersion: v1
+kind: Service
+metadata:
+    name: influxdb
+    labels:
+        app: influxdb
+spec:
+    selector:
+        app: influxdb
+    type: ClusterIP
+    ports:
+        - port: 8086
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
