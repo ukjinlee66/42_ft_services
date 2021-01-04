@@ -44,3 +44,6 @@ Make sure that each redirection toward a service is done using a load balancer. 
 - <https://si.mpli.st/dev/2017-09-10-introduction-to-telegraf/> - Explanation of the concept of telegraf, grafana, and influxDB. <br><br>
 - <https://blog.gojekengineering.com/diy-set-up-telegraf-influxdb-grafana-on-kubernetes-d55e32f8ce48> - telegraf yaml file set <br><br>
 - <https://serverfault.com/questions/1026201/how-do-you-get-the-external-ip-address-from-inside-a-running-pod-in-a-kubernetes> - vsftp guide<br><br>
+- <https://grafana.com/docs/grafana/latest/administration/provisioning/> - grafana datasource yaml file guide<br><br>
+- <https://docs.huihoo.com/grafana/2.6/reference/export_import/index.html> - grafana dashboard export, import guide<br><br>
+- <https://blog.gojekengineering.com/diy-set-up-telegraf-influxdb-grafana-on-kubernetes-d55e32f8ce48> - Set Up Telegraf, InfluxDB, & Grafana on Kubernetes<br><br>
