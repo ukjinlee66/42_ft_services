@@ -6,7 +6,7 @@
 #    By: youlee <youlee@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/18 17:30:53 by youlee            #+#    #+#              #
-#    Updated: 2021/01/02 16:11:08 by youlee           ###   ########.fr        #
+#    Updated: 2021/01/04 22:20:18 by youlee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #!/bin/bash
@@ -41,7 +41,7 @@ docker build --tag phpmyadminn ./srcs/PhpMyAdmin/
 docker build --tag influxdbb ./srcs/InfluxDB/
 docker build --tag grafanaa ./srcs/Grafana/
 docker build --tag telegraff ./srcs/Telegraf/
-
+docker build --tag vsftpdd ./srcs/FTPS/
 echo -e "\033[32m"=========================================================================="\033[0m"
 echo -e "\033[31m"set MetalLB manifest"\033[0m"
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.3/manifests/namespace.yaml
@@ -58,6 +58,7 @@ echo -e "\033[31m"Check External IP"\033[0m"
 kubectl get svc
 echo -e "\033[32m"=========================================================================="\033[0m"
 echo -e "\033[31m"Set all yaml files."\033[0m"
+kubectl apply -f srcs/accounts.yaml
 kubectl apply -f srcs/nginx/my-nginx.yaml
 kubectl apply -f srcs/MySQL/mysql.yaml
 kubectl apply -f srcs/PhpMyAdmin/phpmyadmin.yaml
@@ -65,6 +66,7 @@ kubectl apply -f srcs/WordPress/wordpress.yaml
 kubectl apply -f srcs/Telegraf/telegraf.yaml
 kubectl apply -f srcs/InfluxDB/influxdb.yaml
 kubectl apply -f srcs/Grafana/grafana.yaml
+kubectl apply -f srcs/FTPS/FTPS.yaml
 echo -e "\033[32m"=========================================================================="\033[0m"
 echo -e "\033[36m"SETUP.SH END"\033[0m"
 echo -e "\033[32m"=========================================================================="\033[0m"
