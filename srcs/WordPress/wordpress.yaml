@@ -14,6 +14,7 @@ spec:
             labels:
                 app: wordpress
         spec:
+            serviceAccount: pod-service-access
             containers:
             - name: wordpress
               image: wordpresss
@@ -37,3 +38,4 @@ spec:
     selector:
       app: wordpress  
     type: LoadBalancer
+    loadBalancerIP: 192.168.99.139

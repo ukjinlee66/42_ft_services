@@ -9,10 +9,13 @@ RUN apk update \
 		&& rm phpMyAdmin-5.0.2-all-languages.tar.gz \
 		&& mv phpMyAdmin-5.0.2-all-languages phpmyadmin \
 		&& mv phpmyadmin ./etc/
+RUN apk add nginx
 RUN chmod 777 /etc/phpmyadmin
 RUN rm -rf /var/cache/apk/*
+RUN mkdir -p /run/nginx
+RUN mkdir -p /var/www/phpmyadmin
 COPY config.inc.php /etc/phpmyadmin/
-
+#COPY default /etc/nginx/nginx.conf
 EXPOSE 5000
 
-CMD php -S 0.0.0.0:5000 -t /etc/phpmyadmin
+#CMD php -S 0.0.0.0:5000 -t /etc/phpmyadmin

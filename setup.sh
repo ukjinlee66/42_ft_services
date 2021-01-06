@@ -6,7 +6,7 @@
 #    By: youlee <youlee@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/18 17:30:53 by youlee            #+#    #+#              #
-#    Updated: 2021/01/04 22:20:18 by youlee           ###   ########.fr        #
+#    Updated: 2021/01/07 02:19:16 by youlee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #!/bin/bash
@@ -59,10 +59,10 @@ kubectl get svc
 echo -e "\033[32m"=========================================================================="\033[0m"
 echo -e "\033[31m"Set all yaml files."\033[0m"
 kubectl apply -f srcs/accounts.yaml
-kubectl apply -f srcs/nginx/my-nginx.yaml
 kubectl apply -f srcs/MySQL/mysql.yaml
 kubectl apply -f srcs/PhpMyAdmin/phpmyadmin.yaml
 kubectl apply -f srcs/WordPress/wordpress.yaml
+kubectl apply -f srcs/nginx/my-nginx.yaml
 kubectl apply -f srcs/Telegraf/telegraf.yaml
 kubectl apply -f srcs/InfluxDB/influxdb.yaml
 kubectl apply -f srcs/Grafana/grafana.yaml

@@ -2,7 +2,8 @@ FROM alpine
 
 RUN apk update \
 		&& apk add nginx \
-			&& apk add openssl
+			&& apk add openssl \
+			&& apk add jq && apk add curl
 RUN apk add --no-cache openssh
 RUN adduser -D -g 'test' test
 RUN echo 'test:0000'|chpasswd
@@ -27,4 +28,4 @@ RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -subj '/C=KR/ST=42/L=Seo
 
 EXPOSE 80 443 30022
 
-CMD sh ./ngstart.sh
+ENTRYPOINT ./ngstart.sh
