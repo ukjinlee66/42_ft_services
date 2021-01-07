@@ -23,14 +23,17 @@ server {
 			location / {
             try_files $uri $uri/ =404;
 			}
-			location /wordpress {
-				return 307  http://192.168.99.139:5050/;
+			location /index.php{
+			return 301 https://$host/phpmyadmin;
 			}
-			location /phpmyadmin/ {
+			location /wordpress {
+				return 307  http://$host:5050/wp-admin/index.php;
+			}
+			location /phpmyadmin {
 				proxy_set_header X-Forwarded-Proto https;
 				proxy_buffers 16 4k;
 				proxy_buffer_size 2k;
-				proxy_pass http://192.168.99.138:5000/;
+				proxy_pass http://phpmyadmin:5000;
 			}
 }
 }

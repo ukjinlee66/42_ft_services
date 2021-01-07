@@ -9,10 +9,14 @@ RUN apk add php7 php7-fpm php7-opcache php7-gd php7-mysqli php7-curl php7-mbstri
 RUN rm -fr /var/cache/apk/*
 RUN tar -xzvf latest.tar.gz
 RUN rm latest.tar.gz
-RUN mv wordpress /etc/
+RUN mv wordpress /var/www/
+RUN chmod 755 /var/www/wordpress
 RUN mkdir -p /run/nginx
-RUN mkdir -p /var/www/phpmyadmin
-COPY ./wp-config.php /etc/wordpress/
+RUN mkdir -p /etc/wordpress
+COPY ./wp-config.php /var/www/wordpress/
+COPY start.sh .
+COPY default /etc/nginx/conf.d/default.conf
+RUN chmod 755 start.sh
 EXPOSE 5050
 
-CMD php -S 0.0.0.0:5050 -t /etc/wordpress/
+CMD ./start.sh

@@ -7,15 +7,18 @@ RUN apk update \
 		&& wget http://files.directadmin.com/services/all/phpMyAdmin/phpMyAdmin-5.0.2-all-languages.tar.gz \
 		&& tar -zxvf phpMyAdmin-5.0.2-all-languages.tar.gz \
 		&& rm phpMyAdmin-5.0.2-all-languages.tar.gz \
-		&& mv phpMyAdmin-5.0.2-all-languages phpmyadmin \
-		&& mv phpmyadmin ./etc/
+		&& mv phpMyAdmin-5.0.2-all-languages phpmyadmin
 RUN apk add nginx
-RUN chmod 777 /etc/phpmyadmin
 RUN rm -rf /var/cache/apk/*
 RUN mkdir -p /run/nginx
-RUN mkdir -p /var/www/phpmyadmin
-COPY config.inc.php /etc/phpmyadmin/
-#COPY default /etc/nginx/nginx.conf
+RUN mkdir -p /etc/phpmyadmin
+RUN mv phpmyadmin /var/www/
+RUN chmod 755 /var/www/phpmyadmin
+COPY config.inc.php /var/www/phpmyadmin/
+COPY default /etc/nginx/conf.d/default.conf
+RUN ln -s /var/www/phpmyadmin /etc/phpmyadmin
+COPY start.sh ./
+RUN chmod 755 start.sh
 EXPOSE 5000
 
-#CMD php -S 0.0.0.0:5000 -t /etc/phpmyadmin
+CMD ./start.sh
