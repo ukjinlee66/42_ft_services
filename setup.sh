@@ -6,7 +6,7 @@
 #    By: youlee <youlee@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/08/18 17:30:53 by youlee            #+#    #+#              #
-#    Updated: 2021/01/07 02:19:16 by youlee           ###   ########.fr        #
+#    Updated: 2021/01/09 04:45:54 by youlee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #!/bin/bash
@@ -17,8 +17,7 @@ echo -e "\033[31m"Minikube start"\033[0m"
 minikube --vm-driver=virtualbox start --extra-config=apiserver.service-node-port-range=1-35000
 echo -e "\033[32m"=========================================================================="\033[0m"
 
-
-
+minikube dashboard &
 
 echo -e "\033[31m"set kubenets set ARP protocol"\033[0m"
 # echo "see what changes would be made, returns nonzero returncode if different"
